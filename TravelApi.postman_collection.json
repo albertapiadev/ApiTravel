@@ -1,0 +1,348 @@
+{
+	"info": {
+		"_postman_id": "560a7d5c-14f6-4f49-8005-d292fa6a6782",
+		"name": "TravelApi",
+		"description": "Proyecto CRUD en Spring con validaciones de nombre unico, campos no vacios y no existencia del registro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18954745"
+	},
+	"item": [
+		{
+			"name": "Get Ciudades",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNTk1NTY3MDI4LCJleHAiOjE1OTU2MTAyMjh9.rLiQCU6fhTD6hJWN7FGq3iUNFNXNF0JqThSTLP8TDtGBjTx4pL0lzNTR-FJrOBBIrZrWY8nDAM6zSViXKETWXg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ciudad/listaCiudad",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ciudad",
+						"listaCiudad"
+					]
+				},
+				"description": "Obtiene las torres"
+			},
+			"response": []
+		},
+		{
+			"name": "Get CiudadBy IdCiudad caso de Error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ciudad/detalleCiudad/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ciudad",
+						"detalleCiudad",
+						"2"
+					]
+				},
+				"description": "localhost:8080/torre/detalleTorre/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Crear Ciudad",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNTk1NTY3MDI4LCJleHAiOjE1OTU2MTAyMjh9.rLiQCU6fhTD6hJWN7FGq3iUNFNXNF0JqThSTLP8TDtGBjTx4pL0lzNTR-FJrOBBIrZrWY8nDAM6zSViXKETWXg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreCiudad\" : \"Ciudad Norte\",\r\n    \"cantidadAptos\" : \"30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ciudad/crearCiudad",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ciudad",
+						"crearCiudad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By id Ciudad Caso exito",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ciudad/detalleCiudad/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ciudad",
+						"detalleCiudad",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Ciudad",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTU5NTU2ODQzMiwiZXhwIjoxNTk1NjExNjMyfQ.g-VABks-oh0JFuY6DiWDI5SMED9Mb4odJEkMawb12aoAuhMO7dvC4xFKcmOlEU9RXYkJsc21E9Sp_OuGE88ZBg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreCiudad\" : \"CiudadNorte\",\r\n    \"cantidadAptos\" : 38\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ciudad/actualizarCiudad/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ciudad",
+						"actualizarCiudad",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Ciudad",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ciudad/borrarCiudad/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ciudad",
+						"borrarCiudad",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo Usuario Caso Error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"nombre\" : \"admin\",\r\n    \"nombreUsuario\": \"admin\",\r\n    \"email\": \"a\",\r\n    \"password\": \"admin\",\r\n    \"roles\": [\"admin\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/nuevoUsuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"nuevoUsuario"
+					]
+				},
+				"description": "Caso de error para el usurio cuando se ingre un email incorrecto"
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"nombre\" : \"admin\",\r\n    \"nombreUsuario\": \"admin\",\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"admin\",\r\n    \"roles\": [\"admin\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/nuevoUsuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"nuevoUsuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Caso error crear usuario mismo nombre",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"nombre\" : \"user\",\r\n    \"nombreUsuario\": \"admin\",\r\n    \"email\": \"user@user.com\",\r\n    \"password\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/nuevoUsuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"nuevoUsuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuario generico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"nombre\" : \"user\",\r\n    \"nombreUsuario\": \"user\",\r\n    \"email\": \"user@user.com\",\r\n    \"password\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/nuevoUsuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"nuevoUsuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreUsuario\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreUsuario\": \"user\",\r\n    \"password\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
