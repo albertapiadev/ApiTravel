@@ -16,8 +16,15 @@ import java.util.stream.Collectors;
 public class UsuarioMain implements UserDetails {
 
     private String nombre;
-    private String usuario;
+
+    private String apellido;
+
+
     private String email;
+
+    private String celular;
+    private String usuario;
+
     private String password;
     // Variable que nos da la autorización (no confundir con autenticación)
     // Coleccion de tipo generico que extendiende
@@ -25,10 +32,12 @@ public class UsuarioMain implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities;
 
     //Constructor
-    public UsuarioMain(String nombre, String usuario, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+public UsuarioMain(String nombre, String apellido, String email, String celular, String usuario, String password, Collection<? extends GrantedAuthority> authorities) {
         this.nombre = nombre;
-        this.usuario = usuario;
+        this.apellido = apellido;
         this.email = email;
+        this.celular = celular;
+        this.usuario = usuario;
         this.password = password;
         this.authorities = authorities;
     }
@@ -41,8 +50,7 @@ public class UsuarioMain implements UserDetails {
                         .stream()
                         .map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name()))
                 .collect(Collectors.toList());
-        return new UsuarioMain(usuario.getNombre(), usuario.getUsuario(), usuario.getEmail(),
-                usuario.getPassword(), authorities);
+        return new UsuarioMain(usuario.getNombre(), usuario.getApellido(), usuario.getEmail(), usuario.getCelular(), usuario.getNombreUsuario(), usuario.getPassword(), authorities);
     }
 
     @Override
@@ -84,7 +92,14 @@ public class UsuarioMain implements UserDetails {
         return nombre;
     }
 
+    public String getApellido() {return apellido;
+    }
+
     public String getEmail() {
         return email;
     }
+
+    public String getCelular() {return celular;
+    }
+
 }

@@ -18,14 +18,23 @@ public class Usuario {
     //Decorador para indicar que no puede ser null el campo
     @NotNull
     private String nombre;
+
     @NotNull
-    @Column(unique = true)
-    private String nombreUsuario;
+    private String apellido;
     @NotNull
     @Column(unique = true)
     private String email;
+
+    @NotNull
+    private String celular;
+    @NotNull
+    @Column(unique = true)
+    private String nombreUsuario;
+
     @NotNull
     private String password;
+
+
 
     @NotNull
     //Relación many to many
@@ -43,10 +52,12 @@ public class Usuario {
     }
 
     //Constuctor sin Id ni Roles
-    public Usuario(@NotNull String nombre, @NotNull String nombreUsuario, @NotNull String email, @NotNull String password) {
+    public Usuario(@NotNull String nombre, @NotNull String apellido, @NotNull String email, @NotNull String celular, @NotNull String nombreUsuario, @NotNull String password) {
         this.nombre = nombre;
-        this.nombreUsuario = nombreUsuario;
+        this.apellido = apellido;
         this.email = email;
+        this.celular = celular;
+        this.nombreUsuario = nombreUsuario;
         this.password = password;
     }
 
@@ -66,12 +77,12 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getUsuario() {
-        return nombreUsuario;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setUsuario(String usuario) {
-        this.nombreUsuario = usuario;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getEmail() {
@@ -80,6 +91,22 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public String getPassword() {

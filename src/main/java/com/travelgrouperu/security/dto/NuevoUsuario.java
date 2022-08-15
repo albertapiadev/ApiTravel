@@ -9,10 +9,17 @@ public class NuevoUsuario {
 
     @NotBlank
     private String nombre;
+
     @NotBlank
-    private String nombreUsuario;
+    private String apellido;
     @Email
     private String email;
+
+    @NotBlank
+    private String celular;
+    @NotBlank
+    private String nombreUsuario;
+
     @NotBlank
     private String password;
     //Por defecto crea un usuario normal
@@ -27,12 +34,12 @@ public class NuevoUsuario {
         this.nombre = nombre;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getEmail() {
@@ -41,6 +48,22 @@ public class NuevoUsuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public String getPassword() {
