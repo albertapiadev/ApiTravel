@@ -49,7 +49,7 @@ public class AuthController {
 
     //Espera un json y lo convierte a tipo clase NuevoUsuario
     @PostMapping("/nuevoUsuario")
-    public ResponseEntity<?> nuevoUsuario(@Valid @RequestBody NuevoUsuario nuevoUsuario,
+    public ResponseEntity<Object> nuevoUsuario(@Valid @RequestBody NuevoUsuario nuevoUsuario,
                                           BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return new ResponseEntity<>(new Mensaje("Campos mal o email invalido"), HttpStatus.BAD_REQUEST);
