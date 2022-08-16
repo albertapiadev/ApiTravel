@@ -1,4 +1,3 @@
-package com.travelgrouperu.util;/*
 package com.travelgrouperu.util;
 
 
@@ -23,4 +22,4 @@ public class CreateRoles implements CommandLineRunner {
         rolService.save(rolUser);
     }
 }
-*/
+

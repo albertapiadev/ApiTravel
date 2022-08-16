@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -85,7 +86,23 @@ public class AuthController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtProvider.generateToken(authentication);
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), true, userDetails.getAuthorities());
+        Usuario usr = usuarioService.getByUsuario(userDetails.getUsername()).get();
+
+       // JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), ,true, userDetails.getAuthorities());
+        JwtDto jwtDto = new JwtDto();
+       // jwtDto.setToken(jwt);
+       // jwtDto.setBearer("Bearer");
+        jwtDto.setNombreUsuario(usr.getNombreUsuario());
+        jwtDto.setIdPersona(usr.getIdUsuario());
+        jwtDto.setNombres(usr.getNombre());
+        jwtDto.setApellidos(usr.getApellido());
+        jwtDto.setEmail(usr.getEmail());
+        jwtDto.setCelular(usr.getCelular());
+        jwtDto.setUsuario(usr.getNombreUsuario());
+        jwtDto.setMensaje("Usuario autenticado.");
+        jwtDto.setRpta(true);
+       // jwtDto.setAuthorities(userDetails.getAuthorities());
+
         return new ResponseEntity<>(jwtDto, HttpStatus.OK);
     }
 }
