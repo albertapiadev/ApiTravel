@@ -29,7 +29,7 @@ public class DetalleCompraDto {
     @NotBlank
     private String hora;
     @NotBlank
-    private Double precio;
+    private Double precioTotal;
 
 
 }

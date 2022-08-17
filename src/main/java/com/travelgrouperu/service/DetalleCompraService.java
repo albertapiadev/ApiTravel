@@ -36,7 +36,7 @@ public class DetalleCompraService {
         d.setNombrePasajero(detalleCompra.getNombrePasajero());
         d.setCodigo(detalleCompra.getCodigo());
         d.setHora(detalleCompra.getHora());
-        d.setPrecio(detalleCompra.getPrecio());
+        d.setPrecioTotal(detalleCompra.getPrecioTotal());
 
         repo.save(d);
 
