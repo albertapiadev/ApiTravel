@@ -27,6 +27,6 @@ public class DetalleCompra {
     private String nombrePasajero;
     private String codigo;
     private String hora;
-    private Double precio;
+    private Double precioTotal;
 
 }
