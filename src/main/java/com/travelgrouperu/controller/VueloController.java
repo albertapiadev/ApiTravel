@@ -28,7 +28,7 @@ import java.util.Set;
 
 @RestController
 //Notación para indicar el contexto de nuestros endpoint es decir /ciudad/nombreServicio
-@RequestMapping("/ciudad")
+@RequestMapping("/vuelo")
 //URL que permitimos que consuman nuestras APIS
 //En caso de querer permitir todos los origentes ponemos en lugar de la URL un *
 @CrossOrigin(origins = "http://localhost:4200")

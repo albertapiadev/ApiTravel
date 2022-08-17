@@ -1,32 +1,35 @@
-package com.travelgrouperu.entity;
+package com.travelgrouperu.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
-@Setter
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
-@Table
-@Entity(name = "detallecompra")
-public class DetalleCompra {
+@Setter
+public class DetalleCompraDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idDetalle;
+    @NotBlank
     private String origen;
+    @NotBlank
     private String destino;
+    @NotBlank
     private Date fechaSalida;
+    @Min(1)
     private Integer cantidadPersonas;
+    @NotBlank
     private String tipoViaje;
+    @NotBlank
     private String nombrePasajero;
+    @NotBlank
     private String codigo;
+    @NotBlank
     private String hora;
+    @NotBlank
     private Double precio;
+
 
 }
