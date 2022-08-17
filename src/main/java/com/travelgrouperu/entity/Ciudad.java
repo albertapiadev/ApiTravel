@@ -15,16 +15,17 @@ public class Ciudad {
     private int idCiudad;
     private String nombreCiudad;
     private int cantidadAptos;
-
+    private String urlImage;
     public Ciudad() {
     }
 
     /*
     Constructor con parametros
      */
-    public Ciudad(String nombreCiudad, int cantidadAptos) {
+    public Ciudad(String nombreCiudad, int cantidadAptos, String urlImage) {
         this.nombreCiudad = nombreCiudad;
         this.cantidadAptos = cantidadAptos;
+        this.urlImage=urlImage;
     }
 
     public int getIdCiudad() {
@@ -49,5 +50,13 @@ public class Ciudad {
 
     public void setCantidadAptos(int cantidadAptos) {
         this.cantidadAptos = cantidadAptos;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 }

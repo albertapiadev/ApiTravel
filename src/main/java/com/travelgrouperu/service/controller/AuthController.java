@@ -1,6 +1,7 @@
 package com.travelgrouperu.service.controller;
 
 import com.travelgrouperu.dto.Mensaje;
+import com.travelgrouperu.dto.UsrDto;
 import com.travelgrouperu.security.dto.JwtDto;
 import com.travelgrouperu.security.dto.LoginUsuario;
 import com.travelgrouperu.security.dto.NuevoUsuario;
@@ -105,4 +106,15 @@ public class AuthController {
 
         return new ResponseEntity<>(jwtDto, HttpStatus.OK);
     }
+
+
+    @PostMapping("/buscarUsuario")
+    public ResponseEntity<Object> buscarUsuario(@RequestBody UsrDto usr){
+
+        Usuario usuario= usuarioService.getByUsuario(usr.getUsr()).get();
+
+
+        return new ResponseEntity<>(usuario, HttpStatus.OK);
+    }
+
 }

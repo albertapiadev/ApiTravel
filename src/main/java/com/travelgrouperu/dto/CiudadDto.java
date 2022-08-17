@@ -11,13 +11,15 @@ public class CiudadDto {
     //Notación para indicar que el tamaño minimo debe ser 0
     @Min(0)
     private int cantidadAptos;
-
+    @NotBlank
+    private String urlImage;
     public CiudadDto() {
     }
 
-    public CiudadDto(String nombreCiudad, int cantidadAptos) {
+    public CiudadDto(String nombreCiudad, int cantidadAptos,String urlImage) {
         this.nombreCiudad = nombreCiudad;
         this.cantidadAptos = cantidadAptos;
+        this.urlImage=urlImage;
     }
 
     public String getNombreCiudad() {
@@ -34,5 +36,13 @@ public class CiudadDto {
 
     public void setCantidadAptos(int cantidadAptos) {
         this.cantidadAptos = cantidadAptos;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 }

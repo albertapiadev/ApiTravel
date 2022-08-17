@@ -74,7 +74,8 @@ public class CiudadController {
         if(ciudadService.existsByNombreCiudad(ciudadDto.getNombreCiudad()))
             return new ResponseEntity(new Mensaje("Ya existe una ciudad con ese nombre"), HttpStatus.BAD_REQUEST);
 
-        Ciudad ciudad = new Ciudad(ciudadDto.getNombreCiudad(), ciudadDto.getCantidadAptos());
+
+        Ciudad ciudad = new Ciudad(ciudadDto.getNombreCiudad(), ciudadDto.getCantidadAptos(),ciudadDto.getUrlImage());
         ciudadService.saveCiudad(ciudad);
         return new ResponseEntity(new Mensaje("Ciudad creada"), HttpStatus.OK);
     }
@@ -99,6 +100,7 @@ public class CiudadController {
         Ciudad ciudad = ciudadService.getCiudad(idCiudad).get();
         ciudad.setNombreCiudad(ciudadDto.getNombreCiudad());
         ciudad.setCantidadAptos(ciudadDto.getCantidadAptos());
+        ciudad.setUrlImage(ciudadDto.getUrlImage());
         ciudadService.saveCiudad(ciudad);
         return new ResponseEntity(new Mensaje("Ciudad actualizada"), HttpStatus.OK);
     }
