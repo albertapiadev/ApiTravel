@@ -25,6 +25,10 @@ public class DetalleCompraService {
         return repo.findById(idDetalleCompra);
     }
 
+    public boolean existsByIdDetalleCompra(Integer idDetalleCompra) {
+        return repo.existsById(idDetalleCompra);
+    }
+
     public void saveDetalleCompra(DetalleCompraDto detalleCompra) {
         DetalleCompra d = new DetalleCompra();
         d.setIdDetalle(detalleCompra.getIdDetalle());
@@ -37,6 +41,8 @@ public class DetalleCompraService {
         d.setCodigo(detalleCompra.getCodigo());
         d.setHora(detalleCompra.getHora());
         d.setPrecioTotal(detalleCompra.getPrecioTotal());
+
+        d.setIdVuelo(detalleCompra.getIdVuelo());
 
         repo.save(d);
 

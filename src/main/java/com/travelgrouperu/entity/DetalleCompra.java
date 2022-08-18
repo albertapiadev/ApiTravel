@@ -8,10 +8,10 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Date;
 
-@Setter
-@Getter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Table
 @Entity(name = "detallecompra")
 public class DetalleCompra {
@@ -28,5 +28,7 @@ public class DetalleCompra {
     private String codigo;
     private String hora;
     private Double precioTotal;
+
+    private Integer idVuelo;
 
 }

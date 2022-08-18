@@ -1,6 +1,7 @@
 package com.travelgrouperu.controller;
 
 import com.travelgrouperu.dto.DetalleCompraDto;
+import com.travelgrouperu.dto.Mensaje;
 import com.travelgrouperu.entity.DetalleCompra;
 import com.travelgrouperu.service.DetalleCompraService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @RestController
 @RequestMapping("/detalleCompra")
@@ -31,6 +29,16 @@ public class DetalleCompraController {
 
         List<DetalleCompra> detalleCompras = serv.listaDetalleCompra();
         return new ResponseEntity<List<DetalleCompra>>(detalleCompras, HttpStatus.OK);
+    }
+
+    @GetMapping ("/detalleCompra/{idDetalle}")
+    public ResponseEntity<DetalleCompra> detalleCompraById(@PathVariable("idDetalle") Integer idDetalle){
+
+        if (!serv.existsByIdDetalleCompra(idDetalle))
+            return new ResponseEntity(new Mensaje("No existe el detalle"), HttpStatus.NOT_FOUND);
+
+        DetalleCompra detalleCompra = serv.getDetalleCompra(idDetalle).get();
+        return new ResponseEntity(detalleCompra, HttpStatus.OK);
     }
 
     /*@PreAuthorize("hasRole('ADMIN')")
