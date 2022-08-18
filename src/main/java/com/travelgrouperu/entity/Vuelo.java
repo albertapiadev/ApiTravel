@@ -13,7 +13,7 @@ public class Vuelo {
     private Integer idVuelo;
     private String origen;
     private String destino;
-    private Date fechaSalida;
+    private String fechaSalida;
     private Integer cantidadPersonas;
     private String tipoViaje;
     private String nombrePasajero;
@@ -26,7 +26,7 @@ public class Vuelo {
     public Vuelo() {
     }
 
-    public Vuelo(Integer idVuelo,String origen, String destino, Date fechaSalida, Integer cantidadPersonas, String tipoViaje, String nombrePasajero, String codigo, String hora, String numeroTarjeta, Integer cvv, Double precioTotal) {
+    public Vuelo(Integer idVuelo,String origen, String destino, String fechaSalida, Integer cantidadPersonas, String tipoViaje, String nombrePasajero, String codigo, String hora, String numeroTarjeta, Integer cvv, Double precioTotal) {
         this.idVuelo = idVuelo;
         this.origen = origen;
         this.destino = destino;
@@ -66,11 +66,11 @@ public class Vuelo {
         this.destino = destino;
     }
 
-    public Date getFechaSalida() {
+    public String getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 

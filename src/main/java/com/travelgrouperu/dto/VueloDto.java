@@ -12,7 +12,7 @@ public class VueloDto {
     @NotBlank
     private String destino;
 
-    private Date fechaSalida;
+    private String fechaSalida;
     @Min(1)
     private Integer cantidadPersonas;
     @NotBlank
@@ -54,11 +54,11 @@ public class VueloDto {
         this.destino = destino;
     }
 
-    public Date getFechaSalida() {
+    public String getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
