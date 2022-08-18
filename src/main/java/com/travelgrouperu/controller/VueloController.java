@@ -73,7 +73,7 @@ public class VueloController {
     //El body va a ser un JSON
     //Aqui se usa el apache commons lang
     // El import de StringUtils es import org.apache.commons.lang3.StringUtils;
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping("/crearVuelo")
     public ResponseEntity<Object> creaVuelo(@RequestBody VueloDto vuelo){
 

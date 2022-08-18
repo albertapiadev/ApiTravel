@@ -11,7 +11,7 @@ public class VueloDto {
     private String origen;
     @NotBlank
     private String destino;
-    @NotBlank
+
     private Date fechaSalida;
     @Min(1)
     private Integer cantidadPersonas;
@@ -25,9 +25,9 @@ public class VueloDto {
     private String hora;
     @NotBlank
     private String numeroTarjeta;
-    @NotBlank
+
     private Integer cvv;
-    @NotBlank
+
     private Double precioTotal;
 
     public Integer getIdVuelo() {
