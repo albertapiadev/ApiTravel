@@ -1,4 +1,4 @@
-/*package com.travelgrouperu.util;
+package com.travelgrouperu.util;
 
 
 import com.travelgrouperu.security.entity.Rol;
@@ -21,5 +21,5 @@ public class CreateRoles implements CommandLineRunner {
         rolService.save(rolAdmin);
         rolService.save(rolUser);
     }
-}*/
+}
 

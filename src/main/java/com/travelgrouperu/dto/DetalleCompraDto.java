@@ -12,23 +12,23 @@ import java.util.Date;
 public class DetalleCompraDto {
 
     private Integer idDetalle;
-    @NotBlank
+
     private String origen;
-    @NotBlank
+
     private String destino;
-    @NotBlank
-    private Date fechaSalida;
-    @Min(1)
+
+    private String fechaSalida;
+
     private Integer cantidadPersonas;
-    @NotBlank
+
     private String tipoViaje;
-    @NotBlank
+
     private String nombrePasajero;
-    @NotBlank
+
     private String codigo;
-    @NotBlank
+
     private String hora;
-    @NotBlank
+
     private Double precioTotal;
 
 

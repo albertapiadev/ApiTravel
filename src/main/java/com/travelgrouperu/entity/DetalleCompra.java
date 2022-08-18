@@ -21,7 +21,7 @@ public class DetalleCompra {
     private Integer idDetalle;
     private String origen;
     private String destino;
-    private Date fechaSalida;
+    private String fechaSalida;
     private Integer cantidadPersonas;
     private String tipoViaje;
     private String nombrePasajero;
